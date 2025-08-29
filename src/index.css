@@ -1,13 +1,833 @@
-body {
+/* ===============================
+   Global Reset + Base Styles
+   =============================== */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
 }
+
+h1, h2, h3 {
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #444;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ===============================
+   Header + Navigation
+   =============================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f4CE14;
+  border-bottom: 2px solid #ddd;
+}
+
+header img.logo {
+  height: 50px;
+}
+/* Base nav styling */
+.nav {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  /* Little Lemon yellow */
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* spacing between logo and text */
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+nav a:hover {
+  color: #00704a; /* Little Lemon green */
+}
+.littlelemon {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+/* Container */
+
+/* ===============================
+   Hero Section (CallToAction.js)
+   =============================== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  background-color: #495E57;
+
+}
+
+.hero img {
+  max-width: 40%;
+  border-radius: 12px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  color: #F4CE14;
+  font-size: 3rem;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.hero-text ul{
+  list-style: none;
+
+}
+
+
+/* ===============================
+   Specials Section (Specials.js)
+   =============================== */
+.highlights {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+/* Heading + button row */
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.specials-header h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.special-btn {
+  display: inline-block;
+  background-color: #f4ce14; /* Little Lemon yellow */
+  color: #333;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;  /* no underline */
+  transition: background 0.3s ease;
+}
+
+.special-btn:hover {
+  background-color: #495e57; /* Little Lemon green */
+  color: #fff;
+}
+
+/* Remove underline from links inside buttons */
+.special-btn a {
+  text-decoration: none;
+  color: inherit; /* ensures it takes button text color */
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  background-color: #ede7e7;
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+/* Card title row: name left, price right */
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.card-title h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.card-title .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00704a; /* Little Lemon green */
+  margin: 0;
+}
+
+.card img {
+  width: 90%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 0.8rem 0 0.4rem;
+  color: #333;
+}
+
+.card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+
+
+/* ===============================
+   Testimonials Section (CustomersSay.js)
+   =============================== */
+.testimonials {
+  padding: 2rem;
+  background-color: #f4d2d2;
+  text-align: center;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0.5rem auto;
+  display: block;
+}
+
+.review {
+  font-style: italic;
+  margin: 1rem 0;
+  color: #333;
+}
+
+
+/* ===============================
+   About Section (Chicago.js)
+   =============================== */
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  gap: 40px;
+}
+
+/* Left text */
+.about-text {
+  flex: 1;
+  max-width: 30%;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #005c36;
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #005c36;
+}
+
+.about-text p {
+  margin-top: 15px;
+  line-height: 1.6;
+  color: #27372f;
+  text-align: justify;
+}
+
+/* Right images */
+.about-images {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-images img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  margin: 5px;
+}
+
+/* Bottom image */
+.about-images .img-bottom {
+  position: relative;
+  top: -30px;
+  left: 220px;
+  z-index: 1;
+}
+
+/* Top overlapping image */
+.about-images .img-top {
+  position: absolute;
+  top: 20px;
+  left: 450px;
+  z-index: 2;
+}
+
+
+
+
+/* ===============================
+   Footer Section (Footer.js)
+   =============================== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #cfd5d3;
+  padding: 40px 60px;
+  gap: 50px;
+}
+
+.footer-logo img {
+  width: 250px;
+  height: 355px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 60px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-column p,
+.footer-column ul {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 5px 0;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-column ul li a:hover {
+  color: #007b5e;
+}
+
+/* ===============================
+   Order Page
+   =============================== */
+.order {
+  padding: 2rem;
+}
+
+.order h1 {
+  text-align: center;
+  color: #00704a;
+  margin-bottom: 1rem;
+}
+
+.order p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.order-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.order-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+}
+
+.order-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.order-card h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.order-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.order-card button {
+  background: #00704a;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.order-card button:hover {
+  background: #005c36;
+}
+/* ===============================
+   Login Page
+   =============================== */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  background: #fdf4e3;
+  min-height: 80vh;
+}
+
+.login-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #00704a;
+  margin-bottom: 1.5rem;
+}
+
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.login-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #00704a;
+  box-shadow: 0 0 5px rgba(0, 112, 74, 0.3);
+}
+
+.login-form .btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: #00704a;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.login-form .btn:hover {
+  background: #00704a;
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #777d7b;
+}
+
+.signup-text a {
+  color: #00704a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+/* ===============================
+   Menu Page
+   =============================== */
+.menu {
+  padding: 2rem;
+  background: #fdf4e3;
+  min-height: 80vh;
+}
+
+.menu h1 {
+  text-align: center;
+  color: #00704a;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.menu-category {
+  margin-bottom: 3rem;
+}
+
+.menu-category h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  border-left: 5px solid #00704a;
+  padding-left: 0.5rem;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card h3 {
+  margin-bottom: 0.5rem;
+  color: #00704a;
+}
+
+.menu-card .description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.menu-card .price {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
+}
+/* ===============================
+   Booking Page
+   =============================== */
+.booking-page {
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.booking-page h1 {
+  font-size: 2rem;
+  color: #00704a;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.booking-page p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   Booking Form
+   =============================== */
+.booking-form {
+  display: grid;
+  gap: 1.2rem;
+  margin: 2rem auto;
+  max-width: 540px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Labels */
+.booking-form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* Inputs & selects */
+.booking-form input,
+.booking-form select {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border: 1px solid #00704a; /* Little Lemon green */
+  box-shadow: 0 0 4px rgba(0, 112, 74, 0.3);
+}
+
+/* Submit button */
+.booking-form input[type="submit"] {
+  background-color: #00704a; /* Dark green */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.booking-form input[type="submit"]:hover {
+  background-color: #005f3a; /* Darker hover */
+  transform: translateY(-2px);
+}
+
+.booking-form input[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .booking-form {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+
+/* Small devices */
+@media (max-width: 600px) {
+  .booking-form {
+    padding: 1.5rem;
+  }
+}/* General signup page styles */
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa; /* light gray background */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Container box */
+.signup .form-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading */
+.signup h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color:#00704a;
+}
+
+/* Form styles */
+.signup .form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.signup .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  color:#0a0a0a;
+}
+
+.signup input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.signup input:focus {
+  border-color:#00704a;/* accent green */
+}
+
+/* Button */
+.signup .btn {
+  padding: 12px;
+  background-color:#00704a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.signup .btn:hover {
+  background-color: #00704a;
+}
+
+/* Text below form */
+.signup .form-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #5c5b5b;
+}
+
+.signup .form-text a {
+  color: #00704a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup .form-text a:hover {
+  text-decoration: underline;
+}
+
+
+.reserve{
+  width: 130px;
+  height: 50px;
+  background-color: #f4CE14;
+  border-radius: 3.5px;
+  border: #f9f9f9;
+  margin-top: 50px;
+  font-weight: bold;
+}
+

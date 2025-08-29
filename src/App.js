@@ -1,10 +1,13 @@
-import './App.css';
+import React from "react";
+import Nav from "./components/Nav";
+import Main from "./Main";  // import your Main.js
 
 function App() {
   return (
-    <div className="App">
-    <h1>Little lemon</h1>
-    </div>
+    <>
+      <Nav />
+      <Main />  {/* This handles all routes */}
+    </>
   );
 }
 
