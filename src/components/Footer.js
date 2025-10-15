@@ -23,9 +23,9 @@ export default function Footer() {
         <div className="footer-column">
           <h4>Social Media</h4>
           <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><a href="/facebook">Facebook</a></li>
+            <li><a href="/instagram">Instagram</a></li>
+            <li><a href="/twitter">Twitter</a></li>
           </ul>
         </div>
 

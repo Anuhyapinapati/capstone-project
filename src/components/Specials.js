@@ -7,8 +7,7 @@ function Specials() {
   return (
     <section
       className="highlights"
-      aria-labelledby="specials-heading"
-      role="region">
+      aria-labelledby="specials-heading">
       <div className="specials-header">
         <h2 id="specials-heading">This Week’s Specials!</h2>
         <a href="/menu" className="special-btn" aria-label="View the full online menu">
@@ -23,7 +22,6 @@ function Specials() {
         <article
           className="card"
           aria-labelledby="greek-salad-title"
-          role="article"
         >
           <img
             src={GreekSalad}
@@ -42,7 +40,6 @@ function Specials() {
         <article
           className="card"
           aria-labelledby="bruschetta-title"
-          role="article"
         >
           <img
             src={Bruschetta}
@@ -61,7 +58,6 @@ function Specials() {
         <article
           className="card"
           aria-labelledby="lemon-dessert-title"
-          role="article"
         >
           <img
             src={LemonDessert}

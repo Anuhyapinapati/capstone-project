@@ -39,7 +39,7 @@ function CustomersSay() {
 
       <div className="testimonial-grid">
         {testimonials.map((t, index) => (
-          <article key={index} className="testimonial-card" role="article">
+          <article key={index} className="testimonial-card">
             {/* Star Rating */}
             <div className="stars" aria-label={`${t.rating} out of 5 stars`}>
               {[...Array(5)].map((_, i) => (
@@ -53,8 +53,7 @@ function CustomersSay() {
 
             {/* User Image */}
             <img
-              src={t.image}
-              alt={`Photo of ${t.name}`}
+              src={t.image} alt={`${t.name}`}
               className="testimonial-img"
             />
 
